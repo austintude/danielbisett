@@ -1,0 +1,48 @@
+#educationBlock,
+#coverLetter {
+    text-align: right;
+	margin-right: 2rem;
+
+	& h3 {
+		text-transform: uppercase;
+		font-size: 1.6rem;
+		@media (--content-query) {
+		font-size: 2rem;
+		}
+	}
+
+	& h4 {
+		font-size: 1rem;
+		margin: 0;
+		text-transform: uppercase;
+		@media (--content-query) {
+			font-size: 1.3rem;
+		}
+	}
+
+	& h5 {
+		color: #666;
+		font-size: 0.9rem;
+		margin: 0;
+		@media (--content-query) {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+#mainContent {
+	& h2 {
+	font-size: 2rem;
+	text-transform: uppercase;
+	@media (--content-query) {
+		font-size: 4rem;
+	}
+	}
+}
+
+#skills {
+	& img {
+    max-width: 80%;
+    margin-left: 20%;
+}
+}

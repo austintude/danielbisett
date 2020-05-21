@@ -1,0 +1,50 @@
+.site {
+    margin: 0 0;
+    display: grid;
+	grid-template-columns: 1fr;
+	max-width: 100%;
+
+}
+
+a {
+	text-decoration: none;
+}
+
+#mainContent {
+    display: grid;
+    grid-template-columns: 46% 4% 45%;
+    /* grid-template-rows: repeat(3, 200px); */
+    grid-gap: 0rem;
+    grid-auto-flow: dense;
+	margin: 2rem 1rem;
+
+	@media (--content-query) {
+		display: grid;
+		grid-template-columns: 1fr 40px 1fr;
+		/* grid-template-rows: repeat(3, 200px); */
+		grid-gap: 1rem;
+		grid-auto-flow: dense;
+		margin: 2rem 4rem;
+	}
+}
+
+/* Daniel Bisett specific adjustments */
+.blockLayout {
+	max-width: 100vw;
+}
+ul {
+    margin: 0 10vw;
+	padding-inline-start: 0;
+	& li {
+		min-width: 8rem;
+		@media (--content-query) {
+		min-width: 10rem;
+		}
+	}
+}
+h1, h2 {
+	font-family: var(--highlight-font-family);
+}
+h3, h4, h5, h6 {
+	font-family: var(--global-font-family);
+}

@@ -1,0 +1,52 @@
+
+ #experienceBlocks,
+ #coverLetterPt2 {
+	margin-left: 2rem;
+ & .experienceBlock,
+ & .coverletterPt2Block {
+	margin: 1rem 0 4rem;
+	& h4 {
+		color: #666;
+		font-size: 1rem;
+		   margin: 0;
+		   text-transform: uppercase;
+		   @media (--content-query) {
+			font-size: 1.3rem;
+		   }
+
+		   & b {
+			color: #000;
+		}
+	}
+	& h5 {
+		font-size: 1.1rem;
+		margin-top: 0.3rem;
+		margin-bottom: 0.3rem;
+		font-style: italic;
+	}
+	& ul {
+		& li {
+		margin-left: -1rem;
+		font-size: 1rem;
+		@media (--content-query) {
+			margin-left: 2rem;
+		}
+	}
+}
+
+}
+
+& .experienceBlock {
+
+	/* @media (--content-query) {
+	margin: 1rem 0 1rem;
+	} */
+	h6 {
+		min-width: 8rem;
+	}
+}
+& #danielFace img{
+    max-width: 200px;
+}
+
+ }

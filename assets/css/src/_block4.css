@@ -1,0 +1,8 @@
+.darkBlue {
+    background-color: #17365e;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    position: relative;
+    display: flex;
+}

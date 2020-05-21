@@ -37,6 +37,4 @@ namespace WP_Rig\WP_Rig;
                     </div>
                   </amp-lightbox>
 
-				</div><!-- .rt13rds -->
-
-
+                </div><!-- .rt13rds -->

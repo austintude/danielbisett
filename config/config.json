@@ -1,1 +1,16 @@
-{}
+{
+  "theme": {
+      "slug": "Daniel Bisett",
+      "name": "Daniel Bisett",
+      "author": "Daniel Bisett",
+      "PHPNamespace": "WP_Rig\\WP_Rig"
+    },
+    "dev": {
+      "browserSync": {
+        "live": true,
+        "proxyURL": "danielbisett.local",
+        "bypassPort": "8181",
+        "https": false
+      }
+}
+}

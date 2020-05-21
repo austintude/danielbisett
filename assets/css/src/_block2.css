@@ -1,0 +1,14 @@
+#multilingual {
+	margin: -2rem 4% 1rem;
+	@media (--content-query) {
+		margin: -4rem 20% 1rem;
+	}
+	& h3 {
+		font-size: 1.3rem;
+		font-weight: 400;
+
+		@media (--content-query) {
+			font-size: 2.3rem;
+		}
+	}
+}
