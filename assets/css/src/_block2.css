@@ -1,7 +1,7 @@
 #multilingual {
-	margin: -2rem 4% 1rem;
+	margin: -2rem 4vw 1rem;
 	@media (--content-query) {
-		margin: -4rem 20% 1rem;
+		margin: -4rem 20vw 1rem;
 	}
 	& h3 {
 		font-size: 1.3rem;

@@ -1,17 +1,37 @@
 <div id="top">
             <div id="phoneEmailBlock">
-                <a href="tel:4698502946">
-                    <h2>4698502946</h2>
+<?php $loop = new \WP_Query( array( 'post_type' => 'phone_number', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+				<?php while( $loop->have_posts() ) : $loop->the_post();
+				$mobile_phone_number_txt	= get_field('mobile_phone_number_txt');
+				$mobile_phone_number_link	= get_field('mobile_phone_number_link');
+				?>
+				<a href="tel:<?php echo $mobile_phone_number_link; ?>">
+                    <h2><?php echo $mobile_phone_number_txt; ?></h2>
                 </a>
-                <a href="mailto:daniel@austintatiousdesign.co">
-                    <h2>daniel@austintatiousdesignDOTco</h2>
+
+				<?php endwhile; wp_reset_query(); ?>
+
+				<?php $loop = new \WP_Query( array( 'post_type' => 'email_address', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while( $loop->have_posts() ) : $loop->the_post();
+$email_address_txt	= get_field('email_address_txt');
+$email_address_link	= get_field('email_address_link');
+?>
+<a href="mailto:<?php echo $email_address_link; ?>">
+                    <h2><?php echo $email_address_txt; ?></h2>
                 </a>
+
+<?php endwhile; wp_reset_query(); ?>
+
+
             </div>
-            <div class="danielBisett">
+            <div class="resumeName">
+			<?php $hero_image	= get_field('hero_image'); ?>
                 <!-- <a href="https://danielbisett.com/" class="danielBisett" rel="home" itemprop="url"> -->
-                <amp-img noloading="" on="tap:my-lightbox" role="button" tabindex="0" width="250" height="100" src="https://danielbisett.com/assets/daniel-bisett-banner.png"
-                    class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design" itemprop="logo"
-                    layout="responsive"></amp-img>
+                <img noloading="" on="tap:my-lightbox" role="button" tabindex="0" width="250" height="100" src="<?php echo $hero_image['url']; ?>"
+                    class="custom-logo amp-wp-enforced-sizes" alt="<?php $hero_image['alt']; ?>" itemprop="logo"
+					layout="responsive"></img>
                 <!-- </a> -->
             </div>
             <div id="socialBlock">
@@ -75,11 +95,17 @@
                         </h2>
                     </div>
                     <div id="url">
-                        <a href="https://austintatoiusdesign.co" target="_blank">
-                            <h2>
-                                https://danielbisett.com
-                            </h2>
-                        </a>
+					<?php $loop = new \WP_Query( array( 'post_type' => 'www_address', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while( $loop->have_posts() ) : $loop->the_post();
+$www_txt	= get_field('www_txt');
+$www_link	= get_field('www_link');
+?>
+<a href="mailto:<?php echo $www_link; ?>">
+                    <h2><?php echo $www_txt; ?></h2>
+                </a>
+
+<?php endwhile; wp_reset_query(); ?>
                     </div>
                 </div>
             </div>

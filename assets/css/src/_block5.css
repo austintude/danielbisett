@@ -46,7 +46,13 @@
 	}
 }
 & #danielFace img{
-    max-width: 200px;
+	height: 21vh;
+	width: 21vh;
+	border-radius: 100%;
+	@media (--content-query) {
+		height: 30vh;
+	width: 30vh;
+	}
 }
 
  }

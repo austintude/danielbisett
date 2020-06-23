@@ -5,7 +5,7 @@
 @media (--sidebar-query) {
 
 	.site {
-		margin: 0 1em;
+		margin: 0;
 		display: grid;
 		grid-template-columns: 1fr;
 	}

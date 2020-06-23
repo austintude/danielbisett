@@ -267,8 +267,9 @@
                         </h4>
                         </div>
                         <div class="experienceBlock" id="danielFace">
-                                <amp-img noloading="" width="100" height="100" src="https://danielbisett.com/assets/daniel-bisett-face.png"
+                                <img noloading="" width="100" height="100" src="https://danielbisett.com/assets/daniel-bisett-face.png"
                                 class="custom-logo amp-wp-enforced-sizes" alt="Skills Icons" itemprop="logo"
-                                layout="responsive"></amp-img>
+								layout="responsive"
+								lightbox>
                         </div>
                 </div>

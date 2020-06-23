@@ -23,16 +23,21 @@
 		}
 		& h2 {
 			font-size: .7rem;
+			@media (--content-query) {
+				font-size: 1.7rem;
+			}
 		}
 	}
-	& .danielBisett {
+	& .resumeName {
 		margin-top: -3rem;
 		@media (--content-query) {
 			margin-top: -6rem;
 		}
 		& img {
 			max-width: 96.5%;
+
 		}
+
 	}
 	& #socialBlock {
 		margin-top: -3rem;
@@ -45,7 +50,7 @@
 		}
 		& #socialIcons {
 			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(18px, 1fr));
+			grid-template-columns: repeat(auto-fit, minmax(17px, 1fr));
 			max-width: 40%;
     margin-top: -2rem;
 			/* top: -7rem; */
@@ -65,7 +70,8 @@
 			grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 			@media (--content-query) {
 				font-size: 1.4rem;
-    margin-top: -2rem;
+				margin-top: -2rem;
+				margin-left: 7rem;
 			}
 			& #austintude {
 				margin: 0rem auto 1rem 7rem;
@@ -81,6 +87,7 @@
 				margin-left: 4rem;
 				@media (--content-query) {
 					margin-top: -2rem;
+					font-size: 1.5rem;
     margin-left: 3rem;
 				}
 			}
