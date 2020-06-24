@@ -1,130 +1,170 @@
 <div id="educationBlock">
                     <h2>Education</h2>
                     <div id="PostGrad">
-                        <h3>
-                            Post Graduate
-                        </h3>
+					<?php $postgradloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+$postgradloop->the_post();
+$level_of_education	= get_field('level_of_education');
+?>
+<?php if( $level_of_education == 'post_grad' ): ?>
+				<h3>Post Graduate </h3>
+			<?php endif; ?>
+            <?php wp_reset_query(); ?>
+            <?php $postgradloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+?>
+						<?php while( $postgradloop->have_posts() ) : $postgradloop->the_post();
+$level_of_education	= get_field('level_of_education');
+$school_name	= get_field('school_name');
+$degree_name	= get_field('degree_name');
+$year_graduated	= get_field('year_graduated');
+$school_location	= get_field('school_location');
+?>
+<?php if( $level_of_education == 'post_grad' ): ?>
                         <h4>
-                            Sheffield Hallam University
+						<?php echo $school_name; ?>
                         </h4>
                         <h5>
-                            Masters in TESOL (with merit)
+						<?php echo $degree_name; ?>
                         </h5>
                         <h5>
-                            Class of April 2013
+						<?php echo $year_graduated; ?>
                         </h5>
                         <h5>
-                            Sheffield, UK
+						<?php echo $school_location; ?>
                         </h5>
-                        <br>
-                        <h4>
-                            TLI School of English
-                        </h4>
-                        <h5>
-                            Trinity LTCL Diploma in TESOL
-                        </h5>
-                        <h5>
-                            Class of Aug 2008
-                        </h5>
-                        <h5>
-                            Edinburgh, UK
-                        </h5>
+						<br>
+                        <?php endif; ?>
+						<?php endwhile; wp_reset_query(); ?>
+
                     </div>
                     <div id="Grad">
-                        <h3>
-                            Graduate Degree
-                        </h3>
-                        <h4>
-                            Southwest Texas State University
+                    <?php $undergradloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+                    <?php while( $undergradloop->have_posts() ) : $undergradloop->the_post();
+$level_of_education	= get_field('level_of_education');
+?>
+<?php if ($undergradlooper !== 1): ?>
+<?php if( $level_of_education == 'under_grad' ): $undergradlooper = 1; ?>
+				<h3>Graduate Degree</h3>
+			<?php endif; ?>
+            <?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
+            <?php $undergradloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+?>
+						<?php while( $undergradloop->have_posts() ) : $undergradloop->the_post();
+$level_of_education	= get_field('level_of_education');
+$school_name	= get_field('school_name');
+$degree_name	= get_field('degree_name');
+$year_graduated	= get_field('year_graduated');
+$school_location	= get_field('school_location');
+?>
+<?php if( $level_of_education == 'under_grad' ): ?>
+
+    <h4>
+						<?php echo $school_name; ?>
                         </h4>
                         <h5>
-                            BA Anthropology
+						<?php echo $degree_name; ?>
                         </h5>
                         <h5>
-                            Class of Dec. 1998
+						<?php echo $year_graduated; ?>
                         </h5>
                         <h5>
-                            Texas, USA
+						<?php echo $school_location; ?>
                         </h5>
+						<br>
+                        <?php endif; ?>
+						<?php endwhile; wp_reset_query(); ?>
+
+
                     </div>
                     <div id="certificates">
-                        <h3>
-                            Certificates
-                        </h3>
-                        <h4>
-                            Spanish AP
+                    <?php $certificatesloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+                    <?php while( $certificatesloop->have_posts() ) : $certificatesloop->the_post();
+$level_of_education	= get_field('level_of_education');
+?>
+<?php if ($certificateslooper !== 1): ?>
+<?php if( $level_of_education == 'certi' ): $certificateslooper = 1; ?>
+				<h3>Certificates</h3>
+			<?php endif; ?>
+            <?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
+            <?php $certificatesloop = new \WP_Query( array( 'post_type' => 'education', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+?>
+						<?php while( $certificatesloop->have_posts() ) : $certificatesloop->the_post();
+$level_of_education	= get_field('level_of_education');
+$school_name	= get_field('school_name');
+$degree_name	= get_field('degree_name');
+$year_graduated	= get_field('year_graduated');
+$school_location	= get_field('school_location');
+?>
+<?php if( $level_of_education == 'certi' ): ?>
+                    <h4>
+                        <?php echo $degree_name; ?>
                         </h4>
                         <h5>
-                            University of Texas - 2012
+                        <?php echo $year_graduated; ?>
                         </h5>
                         <h5>
-                            Austin, Texas
+                        <?php echo $school_location; ?>
                         </h5>
                         <br>
-                        <h4>
-                            Texas Teachers Certificate
-                            <br>
-                            (TechApps, EC - 12)
-                        </h4>
-                        <h5>
-                            2008
-                        </h5>
-                        <h5>
-                            Austin, Texas
-                        </h5>
-                        <br>
-                        <h4>
-                            Alliance Française
-                        </h4>
-                        <h5>
-                            ELFCA - 2002
-                        </h5>
-                        <h5>
-                            Hyeres, France
-                        </h5>
-                        <br>
-                        <h4>
-                            CELTA
-                        </h4>
-                        <h5>
-                            Australian College of English
-                        </h5>
-                        <h5>
-                            RSA Cambridge, 1999
-                        </h5>
-                        <h5>
-                            Sydney, Australia
-                        </h5>
+    <?php endif; ?>
+    <?php endwhile; wp_reset_query(); ?>
+
+
+
                         <br>
                         <div id="skills">
-                            <h2>SKILLS</h2>
-                            <amp-img noloading="" width="100" height="100" src="https://danielbisett.com/assets/skills-icons.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Skills Icons" itemprop="logo"
-                                layout="responsive"></amp-img>
+						<?php $skillsloop = new \WP_Query( array( 'post_type' => 'skills', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+                    <?php while( $skillsloop->have_posts() ) : $skillsloop->the_post();
+$skill_icon	= get_field('skill_icon');
+?>
+<?php if ($skillslooper !== 1): ?>
+<?php if( $skill_icon !== 'null' ): $skillslooper = 1; ?>
+<h2>SKILLS</h2>
+			<?php endif; ?>
+            <?php endif; ?>
+			<?php endwhile; wp_reset_query(); ?>
+
+							<div class="skillsIcons">
+							<?php $skillsloop = new \WP_Query( array( 'post_type' => 'skills', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+?>
+						<?php while( $skillsloop->have_posts() ) : $skillsloop->the_post();
+$skill_icon	= get_field('skill_icon');
+?>
+                            <img noloading="" width="100" height="100" src="<?php echo $skill_icon['url']; ?>"
+                                class="custom-logo amp-wp-enforced-sizes" alt="<?php echo $skill_icon['alt']; ?>" itemprop="logo"
+                                layout="responsive">
+								<?php endwhile; wp_reset_query(); ?>
+								</div>
+
                         </div>
                         <div id="triumphs">
-                            <h2>Triumphs</h2>
-                            <h4>
-                                Published Singer/Songrwriter
+						<?php $triumphloop = new \WP_Query( array( 'post_type' => 'triumphs', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+                    <?php while( $triumphloop->have_posts() ) : $triumphloop->the_post();
+$triumph_title	= get_field('triumph_title');
+?>
+<?php if ($triumphlooper !== 1): ?>
+<?php if( $triumph_title !== 'null' ): $triumphlooper = 1; ?>
+<h2>Triumphs</h2>			<?php endif; ?>
+            <?php endif; ?>
+			<?php endwhile; wp_reset_query(); ?>
+
+							<?php $triumphloop = new \WP_Query( array( 'post_type' => 'triumphs', 'orderby' => 'post_id', 'order' => 'ASC' ) );
+?>
+						<?php while( $triumphloop->have_posts() ) : $triumphloop->the_post();
+$triumph_title	= get_field('triumph_title');
+$triumph_cont	= get_field('triumph_cont');
+?>
+<h4>
+<?php echo $triumph_title; ?>
                             </h4>
                             <h5>
-                                'Disculpame' by Daniel Bisett
-                                <br>
-                                performed by Los Confundidos
-                                <br>
-                                as seen in <u>East Side Story</u>
+							<?php echo $triumph_cont; ?>
                             </h5>
                             <br>
-                            <h4>
-                                President of <i>Phi Sigma Tau</i>
-                            </h4>
-                            <h5>
-                                International Honors Society in
-                                <br>
-                                Philosophy
-                                <br>
-                                SWTSU - 1998
-                            </h5>
+<?php endwhile; wp_reset_query(); ?>
+
+
                         </div>
                     </div>
                 </div>

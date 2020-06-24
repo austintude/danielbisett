@@ -37,55 +37,43 @@ $email_address_link	= get_field('email_address_link');
             <div id="socialBlock">
                 <div id="socialIcons">
                     <div id="openCurly">
-                        <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/open-curly-bracket.png"
-                            class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                            itemprop="logo" layout="responsive"></amp-img>
-                    </div>
-                    <div id="linkedIn">
-                        <a href="https://linkedin.com/in/austintude" target="_blank">
-                            <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/linkedin-icon-new.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                                itemprop="logo" layout="responsive"></amp-img>
+					<?php $opencurlyloop = new \WP_Query( array( 'post_type' => 'misc_images', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while( $opencurlyloop->have_posts() ) : $opencurlyloop->the_post();
+$open_curly	= get_field('open_curly');
+?>
+                        <img noloading="" width="40" height="100" src="<?php echo $open_curly['url']; ?>"
+                            class="custom-logo amp-wp-enforced-sizes" alt="<?php $open_curly['alt']; ?>"
+							itemprop="logo" layout="intrinsic">
+							<?php endwhile; wp_reset_query(); ?>
+					</div>
+					<?php $sociallinksloop = new \WP_Query( array( 'post_type' => 'social_links', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while( $sociallinksloop->have_posts() ) : $sociallinksloop->the_post();
+$social_id	= get_field('social_id');
+$social_network_url	= get_field('social_network_url');
+$social_network_icon	= get_field('social_network_icon');
+?>
+                    <div id="<?php echo $social_id; ?>">
+                        <a href="<?php echo $social_network_url; ?>" target="_blank" rel="noreferrer">
+                            <img noloading="" width="1" height="1" src="<?php echo $social_network_icon['url']; ?>"
+                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design - <?php $social_network_icon['alt']; ?>"
+                                itemprop="logo" layout="responsive">
                         </a>
-                    </div>
-                    <div id="twitterIcon">
-                        <a href="https://twitter.com/austintude" target="_blank">
-                            <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/twitter-icon-new.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                                itemprop="logo" layout="responsive"></amp-img>
-                        </a>
-                    </div>
-                    <div id="facebookIcon">
-                        <a href="https://fb.me/austintude" target="_blank">
-                            <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/facebook-icon-new.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                                itemprop="logo" layout="responsive"></amp-img>
-                        </a>
-                    </div>
-                    <div id="pinterestIcon">
-                        <a href="https://pinterest.com/austintude" target="_blank">
-                            <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/pinterest-icon-new.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                                itemprop="logo" layout="responsive"></amp-img>
-                        </a>
-                    </div>
-                    <div id="instagramIcon">
-                        <a href="https://instagram.com/austintude" target="_blank">
-                            <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/instagram-icon-new.png"
-                                class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                                itemprop="logo" layout="responsive"></amp-img>
-                        </a>
-                    </div>
-                    <!-- <div id="linkedIn">
-                        <amp-img noloading="" width="40" height="100"
-                        src="https://danielbisett.com/assets/linkedin-icon-new.png"
-                        class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design" itemprop="logo"
-                        layout="responsive"></amp-img>
-                </div> -->
+					</div>
+					<?php endwhile; wp_reset_query(); ?>
+
                     <div id="closeCurly">
-                        <amp-img noloading="" width="40" height="100" src="https://danielbisett.com/assets/close-curly-bracket.png"
-                            class="custom-logo amp-wp-enforced-sizes" alt="Austintatious Design"
-                            itemprop="logo" layout="responsive"></amp-img>
+					<?php $closecurlyloop = new \WP_Query( array( 'post_type' => 'misc_images', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+
+<?php while( $closecurlyloop->have_posts() ) : $closecurlyloop->the_post();
+$close_curly	= get_field('close_curly');
+?>
+                        <img noloading="" width="40" height="100" src="<?php echo $close_curly['url']; ?>"
+                            class="custom-logo amp-wp-enforced-sizes" alt="<?php $close_curly['alt']; ?>"
+							itemprop="logo" layout="intrinsic">
+							<?php endwhile; wp_reset_query(); ?>
+
                     </div>
                 </div>
                 <div id="socialSecondRow">
@@ -95,9 +83,9 @@ $email_address_link	= get_field('email_address_link');
                         </h2>
                     </div>
                     <div id="url">
-					<?php $loop = new \WP_Query( array( 'post_type' => 'www_address', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
+					<?php $wwwloop = new \WP_Query( array( 'post_type' => 'www_address', 'orderby' => 'post_id', 'order' => 'ASC' ) ); ?>
 
-<?php while( $loop->have_posts() ) : $loop->the_post();
+<?php while( $wwwloop->have_posts() ) : $wwwloop->the_post();
 $www_txt	= get_field('www_txt');
 $www_link	= get_field('www_link');
 ?>
