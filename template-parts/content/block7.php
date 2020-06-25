@@ -1,40 +1,77 @@
 <div id="coverLetterPt2">
                         <h2>Cover Letter Pt. 2</h2>
                         <div class="coverLetterBlock">
-                            <h3>Last 3 Books</h3>
-                            <h4>The Four Agreements</h4>
-                            <h4>A Dance with Dragons - Game of Thrones</h4>
-                            <h4>Seventh Son - Alvin Maker Series</h4>
+						<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$last_three_books_title	= get_field('last_three_books_title');
+$last_three_books_items	= get_field('last_three_books_items');
+?>
+<?php if( $last_three_books_title ): ?>
+	<h3><?php echo $last_three_books_title; ?></h3>
+	<?php if( $last_three_books_items ): ?>
+							<?php while ( have_rows('last_three_books_items') ) : the_row();
+							$last_three_books_item	= get_sub_field('last_three_books_item');
+								?>
+                            <h4><?php echo $last_three_books_item; ?></h4>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
                         </div>
                         <br>
                         <div class="coverLetterBlock">
-                                <h3>Fun</h3>
-                                <h4>I play Ping Pong</h4>
-                                <h4>I play with my 4 children</h4>
-                                <h4>I travel the world</h4>
+						<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$fun_title	= get_field('fun_title');
+$fun_items	= get_field('fun_items');
+?>
+<?php if( $fun_title ): ?>
+	<h3><?php echo $fun_title; ?></h3>
+								<?php if( $fun_items ): ?>
+							<?php while ( have_rows('fun_items') ) : the_row();
+							$fun_item	= get_sub_field('fun_item');
+								?>
+                            <h4><?php echo $fun_item; ?></h4>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
+
                             </div>
                             <br>
                             <div class="coverLetterBlock">
-                                    <h3>Current Job</h3>
-                                    <h4>I own my own small web development agency</h4>
-                                    <h5>While I love working for myself, the ebb and flow of clients is stressful and the reality is that, after taxes, I really haven't made that much money.
-                                        <br>
-                                        The way I see it, I just love to build websites.
-                                        <br>
-                                        I love working remotely because it means my family and I can travel across the US and Canada without having to lose a steady income.
-                                        <br>
-                                        But most of all, I just love to do what I do and if there is a better way to do what I do, my ego is not on the line.
+							<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$current_job_title	= get_field('current_job_title');
+$current_job_lead	= get_field('current_job_lead');
+$current_job_desc	= get_field('current_job_desc');
+?>
+<?php if( $current_job_title ): ?>
+	<h3><?php echo $current_job_title; ?></h3>
+                                    <h4><?php echo $current_job_lead; ?></h4>
+                                    <h5><?php echo $current_job_desc; ?>
                                     </h5>
-
+									<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
                                 </div>
                                 <br>
                                 <div class="coverLetterBlock">
-                                    <h3>Toughest Challenge cont...</h3>
-                               <h5>... Focussing only on phonetics, I taught myself the various sound differences between Ecuadorian Spanish and Brazilian Portugues.
-                            <br>
-                            It took hours and hours to teach my ears to hear the sounds and my tongue to make them.
-                            <br>
-                            In less than two weeks, when we finally stepped off our last boat onto the shores of Belem, the locals considered me a proficient speaker and the customs agents who had given our neighbors grief about the contraband they were carrying, were very pleasant and let my girlfriend and I through without a hitch.
+								<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$toughest_challenge_cont_title	= get_field('toughest_challenge_cont_title');
+$toughest_challenge_desc_cont	= get_field('toughest_challenge_desc_cont');
+?>
+<?php if( $toughest_challenge_cont_title ): ?>
+	<h3><?php echo $toughest_challenge_cont_title; ?></h3>
+                        <h5><?php echo $toughest_challenge_desc_cont; ?>
+
                         </h5>
+						<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
+
                             </div>
                     </div>

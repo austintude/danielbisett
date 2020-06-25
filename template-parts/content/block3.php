@@ -131,9 +131,9 @@ $skill_icon	= get_field('skill_icon');
 						<?php while( $skillsloop->have_posts() ) : $skillsloop->the_post();
 $skill_icon	= get_field('skill_icon');
 ?>
-                            <img noloading="" width="100" height="100" src="<?php echo $skill_icon['url']; ?>"
+                            <img noloading="" src="<?php echo $skill_icon['url']; ?>"
                                 class="custom-logo amp-wp-enforced-sizes" alt="<?php echo $skill_icon['alt']; ?>" itemprop="logo"
-                                layout="responsive">
+                                layout="intrinsic">
 								<?php endwhile; wp_reset_query(); ?>
 								</div>
 

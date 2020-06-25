@@ -1,45 +1,75 @@
 <div id="coverLetter">
                     <h2>Cover Letter Pt. 1</h2>
                     <div class="coverLetterBlock">
-                        <h3>Best For the Role</h3>
-                        <h4>I am the only *known* AMP (Accelerated Mobile Pages) Specialist in Texas</h4>
-                        <h5>I'm an early adopter of Google's AMP methodology</h5>
-                        <h5>I am a beta tester for Google et al's AMP plugin</h5>
-                        <h5>I hand code WordPress themes from scratch using WPRig</h5>
-                        <h5>My sites are 100% AMP valid by design</h5>
+					<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$best_for_role_title	= get_field('best_for_role_title');
+$best_for_role_lead	= get_field('best_for_role_lead');
+$best_for_role_list_items	= get_field('best_for_role_list_items');
+?>
+<?php if( $best_for_role_title ): ?>
+	<h3><?php echo $best_for_role_title; ?></h3>
+                        <h4><?php echo $best_for_role_lead; ?></h4>
+						<?php if( $best_for_role_list_items ): ?>
+							<?php while ( have_rows('best_for_role_list_items') ) : the_row();
+							$best_for_role_list_item	= get_sub_field('best_for_role_list_item');
+								?>
+								<h5>
+									<?php echo $best_for_role_list_item; ?>
+								</h5>
+							<?php endwhile; ?>
+						<?php endif; ?>
+	<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
+
                     </div>
-                    <br>
 
                     <div class="coverLetterBlock">
-                            <h3>Value Fit</h3>
-                            <h4>I'm the Real Deal</h4>
-                            <h5>As evidenced by this Resume/Cover Letter</h5>
+					<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$value_fit_title	= get_field('value_fit_title');
+$value_fit_items	= get_field('value_fit_items');
+?>
+<?php if( $value_fit_title ): ?>
+	<h3><?php echo $value_fit_title; ?></h3>
+
+							<?php if( $value_fit_items ): ?>
+							<?php while ( have_rows('value_fit_items') ) : the_row();
+							$value_fit_lead	= get_sub_field('value_fit_lead');
+							$value_fit_list_items	= get_sub_field('value_fit_list_items');
+							?>
+                            <h4><?php echo $value_fit_lead; ?></h4>
+							<?php if( $value_fit_list_items ): ?>
+							<?php while ( have_rows('value_fit_list_items') ) : the_row();
+							$value_fit_list_item	= get_sub_field('value_fit_list_item');
+							?>
+                            <h5><?php echo $value_fit_list_item; ?></h5>
+							<?php endwhile; ?>
+						<?php endif; ?>
                             <br>
-                            <h4>I care</h4>
-                            <h5>I always want my clients to have the best available</h5>
-                            <h5>I take great pains to make sure my clients get everything the way they want it</h5>
-                            <h5>I constantly offer guidance and advice when I feel my client is likely to make a poorly informed decision</h5>
-                            <br>
-                            <h4>I strive for excellence</h4>
-                            <h5>In everything I do</h5>
-                            <br>
-                            <h4>I like to party</h4>
-                            <h5>Well, sort of. Ping Pong is my Jam!</h5>
+							<?php endwhile; ?>
+						<?php endif; ?>
+						<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
                         </div>
-                        <br>
 
                     <div class="coverLetterBlock">
-                            <h3>Toughest Challenge</h3>
-                        <h4>Learning Portuguese</h4>
-                        <h4>...in 2 Weeks</h4>
-                        <h5>While hitch hiking on various canoes across the Rio Napo (an Amazon tributary), I had to learn portuguese as quickly as I could to make sure that my then-girlfriend/now-wife and I would not be in danger when we reached our destination (Belem, Brazil) 2 weeks later.
-                            <br>
-                            Having already spent a year learning Spanish and 6 months learning French to a level of fluency, I knew I could do it.
-                            <br>
-                            Before leaving Ecuador, I grabbed a Portuguese/Spanish dictionary and got to work. ...
-                            <br>
+					<?php $coverletterloop = new \WP_Query( array( 'post_type' => 'cover_letter', 'orderby' => 'post_id', 'order' => 'DSC' ) );
+?>
+						<?php while( $coverletterloop->have_posts() ) : $coverletterloop->the_post();
+$toughest_challenge_title	= get_field('toughest_challenge_title');
+$toughest_challenge_lead	= get_field('toughest_challenge_lead');
+$toughest_challenge_desc	= get_field('toughest_challenge_desc');
+?>
+<?php if( $toughest_challenge_title ): ?>
+	<h3><?php echo $toughest_challenge_title; ?></h3>
+                        <h4><?php echo $toughest_challenge_lead; ?></h4>
+                        <h5><?php echo $toughest_challenge_desc; ?>
 
                         </h5>
-
+						<?php endif; ?>
+            <?php endwhile; wp_reset_query(); ?>
                         </div>
                 </div>

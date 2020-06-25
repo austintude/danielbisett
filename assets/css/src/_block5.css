@@ -52,6 +52,7 @@
 	@media (--content-query) {
 		height: 30vh;
 	width: 30vh;
+	border-radius: 100%;
 	}
 }
 
