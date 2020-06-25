@@ -62,7 +62,7 @@ $samples_of_work	= get_field('samples_of_work');
                         <li><a href="<?php echo $sample_link; ?>"><?php echo $sample_title; ?></a></li>
 						<?php endwhile; ?>
 						<h6>* 100% AMP valid full site</h6>
-						<h6>** Featured in <a href="https://amp-wp.org/showcases/" target="_blank" rel="nofollow">Google's AMP-plugin for WordPress Showcase</a></h6>
+						<h6>** Featured in <a href="https://amp-wp.org/showcases/" target="_blank" rel="noopener">Google's AMP-plugin for WordPress Showcase</a></h6>
 								</ul>
 
     <?php endif; ?>

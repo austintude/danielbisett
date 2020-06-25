@@ -29,7 +29,7 @@ $email_address_link	= get_field('email_address_link');
             <div class="resumeName">
 			<?php $hero_image	= get_field('hero_image'); ?>
                 <!-- <a href="https://danielbisett.com/" class="danielBisett" rel="home" itemprop="url"> -->
-                <img noloading="" on="tap:my-lightbox" role="button" tabindex="0" width="250" height="100" src="<?php echo $hero_image['url']; ?>"
+                <img noloading="" on="tap:my-lightbox" role="button" aria-label="link to online contact form" tabindex="0" width="250" height="100" src="<?php echo $hero_image['url']; ?>"
                     class="custom-logo amp-wp-enforced-sizes" alt="<?php $hero_image['alt']; ?>" itemprop="logo"
 					layout="responsive"></img>
                 <!-- </a> -->
