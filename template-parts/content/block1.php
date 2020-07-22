@@ -89,7 +89,7 @@ $close_curly	= get_field('close_curly');
 $www_txt	= get_field('www_txt');
 $www_link	= get_field('www_link');
 ?>
-<a href="mailto:<?php echo $www_link; ?>">
+<a href="<?php echo $www_link; ?>">
                     <h2><?php echo $www_txt; ?></h2>
                 </a>
 
