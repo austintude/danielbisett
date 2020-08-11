@@ -6,6 +6,9 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
+ *
+ *
+ *
  * @package wp_rig
  */
 
